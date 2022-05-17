@@ -46,13 +46,13 @@ func (c *OpController) HandleLogin(ctx *gin.Context) (interface{}, error) {
 	}
 	
 
-	//fmt.Println("---------------------------------")
-	//fmt.Println(content.ProxyName)
-	//fmt.Println(content.ProxyType)
-	//fmt.Println(content.RemotePort)
-	//fmt.Println(content.CustomDomains)
-	//fmt.Println(content.SubDomain)
-	//fmt.Println("---------------------------------")
+	fmt.Println("---------------------------------")
+	fmt.Println(content.ProxyName)
+	fmt.Println(content.ProxyType)
+	fmt.Println(content.RemotePort)
+	fmt.Println(content.CustomDomains)
+	fmt.Println(content.SubDomain)
+	fmt.Println("---------------------------------")
 
 	subdomain  := content.SubDomain
 	remoteport := strconv.Itoa(content.RemotePort)

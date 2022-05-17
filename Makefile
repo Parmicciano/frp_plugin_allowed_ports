@@ -1,6 +1,6 @@
 export GO111MODULE=on
 
-all: fp-multiuser
+all: frp_plugin_allowed_ports
 
-fp-multiuser:
-	go build -o ./bin/fp-multiuser ./cmd/fp-multiuser
+frp_plugin_allowed_ports:
+	go build -o ./bin/frp_plugin_allowed_ports ./cmd/frp_plugin_allowed_ports

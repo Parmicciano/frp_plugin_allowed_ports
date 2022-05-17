@@ -1,30 +1,34 @@
-# fp-multiuser
+# frp_plugin_allowed_ports
 
-frp server plugin to support multiple users for [frp](https://github.com/fatedier/frp).
+frp server plugin to define allowed ports for a specific user for [frp](https://github.com/fatedier/frp).
 
-fp-multiuser will run as one single process and accept HTTP requests from frps.
 
-[README](README.md) | [中文文档](README_zh.md)
+
 
 ### Features
 
-* Support multiple user authentication by tokens saved in file.
+* Support the verification of the port used by the users by ports & subdomain saved in a file. 
 
 ### Download
 
-Download fp-multiuser binary file from [Release](https://github.com/gofrp/fp-multiuser/releases).
+Download fp-multiuser binary file from [Release](https://github.com/Parmicciano/frp_plugin_allowed_ports/releases).
 
 ### Requirements
 
-frp version >= v0.31.0
+frp version >= v0.42.0
+
+It is possible that the plugin works for older version even though it has not been tested. 
 
 ### Usage
 
-1. Create file `tokens` including all support usernames and tokens.
+1. Create file `ports` including all support usernames and ports.
 
     ```
-    user1=123
-    user2=abc
+    user1=65536
+    user2=80
+    user2=525
+    user1=6980
+    user2=subdomain
     ```
 
     One user each line. Username and token are split by `=`.
@@ -79,4 +83,4 @@ frp version >= v0.31.0
     local_port = 22
     remote_port = 6000
     ```
-# schoolMangementSystem
+
