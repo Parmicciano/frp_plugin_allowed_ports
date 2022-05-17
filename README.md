@@ -43,7 +43,7 @@ It is possible that the plugin works for older version even though it has not be
 
     
     ```
- # frps.ini
+
  [common]
 bind_port = 7000
 vhost_http_port = 80
