@@ -43,12 +43,12 @@ It is possible that the plugin works for older version even though it has not be
 
     
     ```
-    # frps.ini
-  [common]
+ # frps.ini
+ [common]
 bind_port = 7000
 vhost_http_port = 80
 dashboard_port = 7500
-# dashboard's username and password are both optional，if not set, default is admin.
+
 dashboard_user = admin
 dashboard_pwd = admin
 subdomain_host = masternetwork.us
