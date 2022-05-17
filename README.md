@@ -11,7 +11,7 @@ frp server plugin to define allowed ports for a specific user for [frp](https://
 
 ### Download
 
-Download fp-multiuser binary file from [Release](https://github.com/Parmicciano/frp_plugin_allowed_ports/releases).
+Download frp_plugin_allowed_ports binary file from [Release](https://github.com/Parmicciano/frp_plugin_allowed_ports/releases).
 
 ### Requirements
 
