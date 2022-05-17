@@ -44,13 +44,24 @@ It is possible that the plugin works for older version even though it has not be
     
     ```
     # frps.ini
-    [common]
-    bind_port = 7000
+  [common]
+bind_port = 7000
+vhost_http_port = 80
+dashboard_port = 7500
+# dashboard's username and password are both optional，if not set, default is admin.
+dashboard_user = admin
+dashboard_pwd = admin
+subdomain_host = masternetwork.us
 
-    [plugin.multiuser]
-    addr = 127.0.0.1:7200
-    path = /handler
-    ops = Login
+[plugin.multiuser]
+addr = 127.0.0.1:8000
+path = /handler
+ops = Login
+
+[plugin.frp_plugin_allowed_ports]
+addr = 127.0.0.1:9001
+path = /handler
+ops = NewProxy
     ```
 
 4. Frpc file :
