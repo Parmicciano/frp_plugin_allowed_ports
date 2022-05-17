@@ -1,0 +1,1 @@
+# frp_plugin_allowed_ports
