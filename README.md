@@ -42,7 +42,7 @@ It is possible that the plugin works for older version even though it has not be
 3. Register plugin in frps.
 
     
-    ```
+```
 
  [common]
 bind_port = 7000
@@ -62,8 +62,7 @@ ops = Login
 addr = 127.0.0.1:9001
 path = /handler
 ops = NewProxy
-    ```
-
+```
 4. Frpc file :
 
     User field is required
