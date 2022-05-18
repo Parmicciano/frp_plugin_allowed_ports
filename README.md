@@ -29,6 +29,7 @@ It is possible that the plugin works for older version even though it has not be
     user2=525
     user1=6980
     user2=subdomain
+    user1=subdomain2
     ```
 
     One user each line. Username and token are split by `=`.
@@ -40,12 +41,14 @@ It is possible that the plugin works for older version even though it has not be
 
 3. Register plugin in frps.
 
-    ```
-  [common]
+    
+```
+
+ [common]
 bind_port = 7000
 vhost_http_port = 80
 dashboard_port = 7500
-# dashboard's username and password are both optional，if not set, default is admin.
+
 dashboard_user = admin
 dashboard_pwd = admin
 subdomain_host = masternetwork.us
@@ -59,9 +62,7 @@ ops = Login
 addr = 127.0.0.1:9001
 path = /handler
 ops = NewProxy
-
-    ```
-
+```
 4. Frpc file :
 
     User field is required
