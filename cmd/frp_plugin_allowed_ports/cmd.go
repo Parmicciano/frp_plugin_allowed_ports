@@ -22,7 +22,7 @@ var (
 
 func init() {
 	rootCmd.PersistentFlags().BoolVarP(&showVersion, "version", "v", false, "version")
-	rootCmd.PersistentFlags().StringVarP(&bindAddr, "bind_addr", "l", "127.0.0.1:7200", "bind address")
+	rootCmd.PersistentFlags().StringVarP(&bindAddr, "bind_addr", "l", "127.0.0.1:9000", "bind address")
 	rootCmd.PersistentFlags().StringVarP(&portsFile, "ports_file", "p", "./ports", "ports file")
 }
 

@@ -26,6 +26,15 @@ func NewOpController(ports map[string][]string) *OpController {
 func (c *OpController) Register(engine *gin.Engine) {
 	engine.POST("/handler", MakeGinHandlerFunc(c.HandleLogin))
 }
+func contains(s []string, str string) bool {
+	for _, v := range s {
+		if v == str {
+			return true
+		}
+	}
+
+	return false
+}
 
 func (c *OpController) HandleLogin(ctx *gin.Context) (interface{}, error) {
 
@@ -58,8 +67,9 @@ func (c *OpController) HandleLogin(ctx *gin.Context) (interface{}, error) {
 	remoteport := strconv.Itoa(content.RemotePort)
 	username := content.User.User
 
+
 	
-	if subdomain == "" && remoteport == "0"{
+	if subdomain == "" && remoteport == "0" && len(content.CustomDomains) == 0{
 		fmt.Println("Rejected")
 		res.Reject = true
 		res.RejectReason = "Misconfiguration of the client"
@@ -68,11 +78,15 @@ func (c *OpController) HandleLogin(ctx *gin.Context) (interface{}, error) {
 	find = false
 
 	for _, port_allowed := range c.ports[username] {
-	  if port_allowed == remoteport || port_allowed == subdomain {
+	  if port_allowed == remoteport || port_allowed == subdomain  {
 		find = true
 
 	}
 
+	if contains(content.CustomDomains, port_allowed) {
+		find = true
+
+	}
     }
 	if find == false {
 	
@@ -87,4 +101,3 @@ func (c *OpController) HandleLogin(ctx *gin.Context) (interface{}, error) {
 	}
 	return res, nil
 }
-
