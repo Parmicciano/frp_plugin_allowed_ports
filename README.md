@@ -20,7 +20,7 @@ frp version >= v0.42.0
 It is possible that the plugin works for older version even though it has not been tested. 
 
 ### Usage
-
+It works with custom_domains, tcp and subdomains.
 1. Create file `ports` including all support usernames and ports.
 
     ```
@@ -30,6 +30,7 @@ It is possible that the plugin works for older version even though it has not be
     user1=6980
     user2=subdomain
     user1=subdomain2
+    user1=service.masternetwork.us
     ```
 
     One user each line. Username and token are split by `=`.
