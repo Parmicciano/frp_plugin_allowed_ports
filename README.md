@@ -38,7 +38,7 @@ It works with custom_domains, tcp and subdomains.
 2. Run frp and the plugin:
 
     `./frps -c ./frps.ini`
-    `./frp_plugin_allowed_ports -c ./frps.ini`
+    `./frp_plugin_allowed_ports -c ./ports.ini`
 
 3. Register plugin in frps.
 
