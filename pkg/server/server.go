@@ -14,7 +14,7 @@ import (
 
 type Config struct {
 	BindAddress string
-	Ports map[string][]string
+	Ports       map[string][]string
 }
 
 type Server struct {
