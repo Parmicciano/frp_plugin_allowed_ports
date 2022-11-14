@@ -1,17 +1,17 @@
-# frp_plugin_allowed_ports
+# frps_allowed_ports
 
 frp server plugin to define allowed ports for a specific user for [frp](https://github.com/fatedier/frp).
 
-
-
-
 ### Features
 
-* Support the verification of the port used by the users by ports & subdomain saved in a file. 
+* Support the verification of the port used by the users by ports & subdomain saved in a file.
+* Won't valid stcp type as it does authentication via `sk`
+
+Depends on [fp-multiuser](https://github.com/gofrp/fp-multiuser)
 
 ### Download
 
-Download frp_plugin_allowed_ports binary file from [Release](https://github.com/Parmicciano/frp_plugin_allowed_ports/releases).
+Download frps_allowed_ports binary file from [Release](https://github.com/Parmicciano/frp_plugin_allowed_ports/releases).
 
 ### Requirements
 
@@ -42,10 +42,8 @@ It works with custom_domains, tcp and subdomains.
 
 3. Register plugin in frps.
 
-    
-```
-
- [common]
+```ini
+[common]
 bind_port = 7000
 vhost_http_port = 80
 dashboard_port = 7500
@@ -64,11 +62,12 @@ addr = 127.0.0.1:9001
 path = /handler
 ops = NewProxy
 ```
+
 4. Frpc file :
 
     User field is required
 
-    ```
+    ```ini
     # frpc.ini
     [common]
     server_addr = x.x.x.x
