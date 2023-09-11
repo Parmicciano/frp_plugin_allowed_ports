@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 	"strings"
 
@@ -11,13 +10,13 @@ import (
 	"github.com/spf13/cobra"
 )
 
-const version = "0.0.2"
+const version = "1.0.2"
 
 var (
 	showVersion bool
 	bindAddr    string
-	tokenFile   string
-	portsFile   string
+	// tokenFile   string
+	portsFile string
 )
 
 func init() {
@@ -31,7 +30,7 @@ var rootCmd = &cobra.Command{
 	Short: "fp-multiuser is the server plugin of frp to support multiple users.",
 	RunE: func(cmd *cobra.Command, args []string) error {
 
-		portslist, err := ParseportsFromFile(portsFile)
+		portslist, _ := ParseportsFromFile(portsFile)
 		if showVersion {
 			fmt.Println(version)
 			return nil
@@ -56,7 +55,7 @@ func Execute() {
 }
 
 func ParseportsFromFile(file string) (map[string][]string, error) {
-	buf, err := ioutil.ReadFile(file)
+	buf, err := os.ReadFile(file)
 	if err != nil {
 		return nil, err
 	}
